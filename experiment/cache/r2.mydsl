@@ -1,0 +1,220 @@
+rule 第二十七条.6.1
+sourceId 第二十七条
+focus: 订单连续性操作
+	if 状态 is '当天全天停牌或者停牌至' and 交易品种 is '债券' and 交易方式 is '其盘后定价成交' and 操作 is '申报' and 交易市场 is '深圳证券交易所' and 债券品种 is '收市的可转债' and 交易方向 is '买入'
+	then 结果 is '不成功'
+
+rule 第二十七条.6.2
+sourceId 第二十七条
+focus: 订单连续性操作
+	if 状态 is '当天全天停牌或者停牌至' and 交易品种 is '债券' and 交易方式 is '其盘后定价成交' and 操作 is '申报' and 交易市场 is '深圳证券交易所' and 债券品种 is '收市的可转债' and 交易方向 is '卖出'
+	then 结果 is '不成功'
+
+rule 第二十七条.2,第二十七条.3,第二十七条.4.1
+sourceId 第二十七条
+focus: 订单连续性操作
+	if 状态 is '当天全天停牌、处于临时停牌期,停牌至' and 交易品种 is '债券' and 交易方式 is '协商成交交易' and 操作 is '申报' and 交易市场 is '深圳证券交易所' and 债券品种 is '市的可转债' and 交易方向 is '买入'
+	then 结果 is '成功'
+
+rule 第二十七条.2,第二十七条.3,第二十七条.4.2
+sourceId 第二十七条
+focus: 订单连续性操作
+	if 状态 is '当天全天停牌、处于临时停牌期,停牌至' and 交易品种 is '债券' and 交易方式 is '协商成交交易' and 操作 is '申报' and 交易市场 is '深圳证券交易所' and 债券品种 is '市的可转债' and 交易方向 is '卖出'
+	then 结果 is '成功'
+
+rule 第二十七条.5.1.1
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '股票' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.1.2
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '股票' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.2.1
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '基金' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.2.2
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '基金' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.3.1
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '权证' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.3.2
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '权证' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.4.1
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '存托凭证' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.5.4.2
+sourceId 第二十七条
+focus: 时间
+	if 交易方式 is '盘后定价成交方式' and 交易时间 in {[15:05-15:30]} and 交易市场 is '深圳证券交易所' and 交易品种 is '存托凭证' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.1.1.1
+sourceId 第二十七条
+focus: 时间
+	if 交易品种 is '债券' and 交易方式 is '协商成交' and 交易时间 in {[9:15-11:30],[13:00-15:30]} and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十七条.1.2.1
+sourceId 第二十七条
+focus: 时间
+	if 交易品种 is '债券' and 交易方式 is '协商成交' and 交易时间 in {[9:15-11:30],[13:00-15:30]} and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第二十八条.2.1
+sourceId 第二十八条
+focus: 价格
+	if 交易品种 is '债券' and 交易方式 is '盘后定价成交' and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '不成功' 
+	constraint 单笔交易数量 < 500000 and 交易金额 >= 500000
+
+rule 第二十八条.2.2
+sourceId 第二十八条
+focus: 价格
+	if 交易品种 is '债券' and 交易方式 is '盘后定价成交' and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '不成功' 
+	constraint 单笔交易数量 < 500000 and 交易金额 >= 500000
+
+rule 第二十八条.1.1.1
+sourceId 第二十八条
+focus: 价格
+	if 交易品种 is '债券' and 交易方式 is '协商成交' and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '不成功' 
+	constraint 单笔交易数量 < 500000 and 交易金额 < 500000
+
+rule 第二十八条.1.2.1
+sourceId 第二十八条
+focus: 价格
+	if 交易品种 is '债券' and 交易方式 is '协商成交' and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '不成功' 
+	constraint 单笔交易数量 < 500000 and 交易金额 < 500000
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.1.1
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '股票' and 交易方向 is '买入'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.1.2
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '股票' and 交易方向 is '卖出'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.2.1
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '基金' and 交易方向 is '买入'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.2.2
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '基金' and 交易方向 is '卖出'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.3.1
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '权证' and 交易方向 is '买入'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.3.2
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '权证' and 交易方向 is '卖出'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.4.1
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '存托凭证' and 交易方向 is '买入'
+	then 结果 is '成功'
+
+rule 第二十九条.2,第二十九条.4,第二十九条.6.4.2
+sourceId 第二十九条
+focus: 订单连续性操作
+	if 协议大宗交易成交申报指令 is '约定号' and 交易方式 is '证券代码' and ETF份额申赎的申报指令 is '买卖方向' and 协商成交的申报要素 is '价格' and ETF份额申赎的申报指令 is '数量' and 操作 is '申报' and 操作人 is '市场所有参与者' and 约束 is '时间优先' and 交易市场 is '深圳证券交易所' and 交易品种 is '存托凭证' and 交易方向 is '卖出'
+	then 结果 is '成功'
+
+rule 第三十一条.2.1.1
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '股票' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.1.2
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '股票' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.2.1
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '基金' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.2.2
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '基金' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.3.1
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '权证' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.3.2
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '权证' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.4.1
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '存托凭证' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.2.4.2
+sourceId 第三十一条
+focus: 价格
+	if 交易方式 is '协商成交' and 时间 is '除上市首日外' and 申报价格 is '在当日涨跌幅限制价格范围内' and 交易市场 is '深圳证券交易所' and 交易品种 is '存托凭证' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.1.1.1
+sourceId 第三十一条
+focus: 价格
+	if 交易品种 is '债券' and 交易方式 is '协商成交' and 时间 is '上市首日' and 申报价格 is '行价的上下30%范围内' and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '买入' and 操作 is '申报'
+	then 结果 is '成功'
+
+rule 第三十一条.1.2.1
+sourceId 第三十一条
+focus: 价格
+	if 交易品种 is '债券' and 交易方式 is '协商成交' and 时间 is '上市首日' and 申报价格 is '行价的上下30%范围内' and 交易市场 is '深圳证券交易所' and 债券品种 is '向不特定对象发行的可转债' and 交易方向 is '卖出' and 操作 is '申报'
+	then 结果 is '成功'
+
